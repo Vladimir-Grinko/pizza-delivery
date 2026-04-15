@@ -1,36 +1,180 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍕 Pizza Vibe - Доставка пиццы
 
-## Getting Started
+Современное веб-приложение для доставки пиццы, созданное на Next.js 16 с анимациями и интуитивным интерфейсом.
 
-First, run the development server:
+## ✨ Возможности
+
+- 🎠 **Hero-слайдер** с промо-акциями и автоматическим переключением
+- 📂 **Навигация по категориям** с плавным скроллом
+- 🍕 **Карточки товаров** с горизонтальным скроллом и ховер-эффектами
+- 🔍 **Модальное окно товара** с подробной информацией, ингредиентами и характеристиками
+- 🛒 **Выдвижная корзина** (Sheet) с управлением количеством товаров
+- 📝 **Страница оформления заказа** с валидацией формы (Zod + React Hook Form)
+- ✅ **Страница подтверждения** заказа с анимацией
+- 🖼️ **Оптимизация изображений** через `next/image` с скелетон-загрузкой и fallback при ошибках
+- 🎨 **Анимации** с Framer Motion (модалки, скролл, уведомления)
+- 📱 **Полная адаптивность** под мобильные устройства
+- 🌙 **Тёмная тема** (dark mode)
+- 🔔 **Toast-уведомления** при добавлении товаров в корзину (Sonner)
+
+## 🚀 Технологии
+
+- **Фреймворк:** Next.js 16 (App Router)
+- **Язык:** TypeScript
+- **Стили:** Tailwind CSS v4
+- **UI-компоненты:** Radix UI (shadcn/ui)
+- **Стейт-менеджмент:** Zustand
+- **Анимации:** Framer Motion
+- **Валидация форм:** Zod + React Hook Form + @hookform/resolvers
+- **Уведомления:** Sonner
+- **Иконки:** Lucide React
+
+## 📋 Предварительные требования
+
+- Node.js 18+
+- npm или yarn
+
+## 🛠️ Установка и запуск
+
+### 1. Клонирование репозитория
+
+```bash
+git clone <repository-url>
+cd pizza-app
+```
+
+### 2. Установка зависимостей
+
+```bash
+npm install
+```
+
+### 3. Запуск приложения
+
+**Режим разработки:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Сборка для продакшена:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+**Проверка кода:**
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Структура проекта
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+pizza-app/
+├── src/
+│   ├── app/                        # Next.js App Router
+│   │   ├── layout.tsx              # Глобальный лейаут
+│   │   ├── page.tsx                # Главная страница (с mock-данными)
+│   │   ├── globals.css             # Глобальные стили
+│   │   ├── checkout/
+│   │   │   └── page.tsx            # Форма оформления заказа
+│   │   └── success/
+│   │       └── page.tsx            # Страница подтверждения заказа
+│   ├── components/
+│   │   ├── ui/                     # shadcn/ui компоненты
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── label.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── sheet.tsx
+│   │   │   ├── sonner.tsx
+│   │   │   └── textarea.tsx
+│   │   ├── cart/
+│   │   │   └── CartDrawer.tsx      # Выдвижная корзина
+│   │   ├── home/
+│   │   │   └── HeroSlider.tsx      # Промо-слайдер
+│   │   ├── layout/
+│   │   │   └── Header.tsx          # Шапка с корзиной
+│   │   └── products/
+│   │       ├── CategorySection.tsx # Секция товаров по категории
+│   │       ├── ProductCard.tsx     # Карточка товара
+│   │       └── ProductModal.tsx    # Модальное окно товара
+│   ├── lib/
+│   │   ├── utils.ts                # Утилита cn() (clsx + tailwind-merge)
+│   │   └── validations.ts          # Zod-схемы валидации
+│   ├── store/
+│   │   └── useCartStore.ts         # Zustand стор корзины
+│   └── types/
+│       └── database.ts             # TypeScript типы (Product, Category, Order)
+├── public/                         # Статические файлы (favicon)
+├── supabase-schema.sql             # SQL-скрипт для создания таблиц в Supabase
+├── components.json                 # Конфигурация shadcn/ui
+├── next.config.ts                  # Next.js конфигурация (images remotePatterns)
+└── package.json
+```
 
-## Deploy on Vercel
+## 🎨 Дизайн-система
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Цвета
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Primary:** оранжевый/томатный — кнопки и акценты
+- **Background:** светло-серый — фон страницы
+- **Surface:** белый — фон карточек
+- Поддержка **тёмной темы** через CSS-переменные
+
+### Скругления
+
+- Карточки: `rounded-2xl`
+- Кнопки: `rounded-full` / `rounded-xl`
+
+### Шрифт
+
+- **Inter** — современный Sans-Serif шрифт
+
+## 📝 Скрипты
+
+| Команда         | Описание                   |
+| --------------- | -------------------------- |
+| `npm run dev`   | Запуск в режиме разработки |
+| `npm run build` | Сборка для продакшена      |
+| `npm start`     | Запуск продакшен-сервера   |
+| `npm run lint`  | Проверка кода линтером     |
+
+## 🚀 Деплой
+
+### Vercel (рекомендуется)
+
+1. Запушьте код в GitHub/GitLab
+2. Импортируйте проект на [Vercel](https://vercel.com)
+3. Деплой произойдёт автоматически
+
+### Другие платформы
+
+Приложение можно развернуть на любой платформе, поддерживающей Next.js:
+
+- Netlify
+- Railway
+- Render
+
+## 📄 Лицензия
+
+MIT
+
+## 🤝 Вклад
+
+Pull requests приветствуются! Для серьёзных изменений откройте issue для обсуждения.
+
+## 📞 Поддержка
+
+Если у вас возникли вопросы или проблемы, создайте issue в репозитории.
+
+---
+
+**Создано с ❤️ для любителей пиццы**
