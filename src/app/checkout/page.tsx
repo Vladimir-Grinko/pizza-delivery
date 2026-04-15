@@ -232,7 +232,6 @@ export default function CheckoutPage() {
                           fill
                           sizes="64px"
                           className="object-cover"
-                          unoptimized
                           onError={() => handleImageError(item.product_id)}
                         />
                       )}

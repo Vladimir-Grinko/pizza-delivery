@@ -88,7 +88,6 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                         fill
                         sizes="80px"
                         className="object-cover"
-                        unoptimized
                         onError={() => handleImageError(item.product_id)}
                       />
                     )}

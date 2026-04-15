@@ -113,7 +113,6 @@ export function ProductModal({ product, open, onOpenChange }: ProductModalProps)
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className={`object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                   priority
-                  unoptimized
                   onLoad={() => setImageLoaded(true)}
                   onError={() => setImageError(true)}
                 />
