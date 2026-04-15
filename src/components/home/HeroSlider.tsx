@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&h=600&fit=crop&q=80',
+    image: '/images/hero/promo1.svg',
     title: 'Свежая пицца',
     subtitle: 'Горячая, вкусная, с любовью',
     badge: '🔥 Хит продаж',
@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=1200&h=600&fit=crop&q=80',
+    image: '/images/hero/promo2.svg',
     title: 'Бесплатная доставка',
     subtitle: 'При заказе от 1000₽',
     badge: '🚚 Бесплатно',
@@ -24,7 +24,7 @@ const slides = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&h=600&fit=crop&q=80',
+    image: '/images/hero/promo3.svg',
     title: 'Скидка 20%',
     subtitle: 'На первый заказ',
     badge: '💰 Выгода',

@@ -22,8 +22,7 @@ const mockProducts: Product[] = [
     description:
       "Классическая пицца с пикантными колбасками пепперони и тягучей моцареллой",
     price: 599,
-    image_url:
-      "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/pepperoni.svg",
     category_id: "1",
     ingredients: [
       "моцарелла",
@@ -41,8 +40,7 @@ const mockProducts: Product[] = [
     description:
       "Традиционная итальянская пицца со свежими томатами, моцареллой и базиликом",
     price: 499,
-    image_url:
-      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/margarita.svg",
     category_id: "1",
     ingredients: [
       "моцарелла",
@@ -61,8 +59,7 @@ const mockProducts: Product[] = [
     description:
       "Изысканная пицца с четырьмя видами сыра: моцарелла, пармезан, горгонзола и эмменталь",
     price: 699,
-    image_url:
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/fourCheese.svg",
     category_id: "1",
     ingredients: [
       "моцарелла",
@@ -81,8 +78,7 @@ const mockProducts: Product[] = [
     description:
       "Сочная ветчина и сладкий ананас — тропическое наслаждение в каждом кусочке",
     price: 549,
-    image_url:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/hawaiian.svg",
     category_id: "1",
     ingredients: ["ветчина", "ананас", "моцарелла", "томатный соус"],
     weight: 420,
@@ -95,8 +91,7 @@ const mockProducts: Product[] = [
     description:
       "Ассорти из мяса для настоящих ценителей: ветчина, пепперони, бекон и охотничьи колбаски",
     price: 749,
-    image_url:
-      "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/meat.svg",
     category_id: "1",
     ingredients: [
       "ветчина",
@@ -116,8 +111,7 @@ const mockProducts: Product[] = [
     description:
       "Острая пицца для любителей жгучих ощущений с халапеньо и острой колбасой",
     price: 649,
-    image_url:
-      "https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/diablo.svg",
     category_id: "1",
     ingredients: [
       "острая колбаса",
@@ -136,8 +130,7 @@ const mockProducts: Product[] = [
     description:
       "Свежие овощи и зелень на хрустящем тесте — легкий и полезный выбор",
     price: 529,
-    image_url:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/vegetarian.svg",
     category_id: "1",
     ingredients: [
       "шампиньоны",
@@ -157,8 +150,7 @@ const mockProducts: Product[] = [
     name: "Coca-Cola Classic",
     description: "Легендарный прохладительный напиток с освежающим вкусом",
     price: 99,
-    image_url:
-      "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/cocaCola.svg",
     category_id: "2",
     ingredients: [
       "газированная вода",
@@ -175,8 +167,7 @@ const mockProducts: Product[] = [
     name: "Sprite",
     description: "Освежающий лимонно-лаймовый напиток без кофеина",
     price: 99,
-    image_url:
-      "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/sprite.svg",
     category_id: "2",
     ingredients: [
       "газированная вода",
@@ -193,8 +184,7 @@ const mockProducts: Product[] = [
     name: "Fanta Апельсин",
     description: "Яркий апельсиновый напиток для поднятия настроения",
     price: 99,
-    image_url:
-      "https://images.unsplash.com/photo-1624517452488-04869289c4ca?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/fanta.svg",
     category_id: "2",
     ingredients: [
       "газированная вода",
@@ -203,7 +193,7 @@ const mockProducts: Product[] = [
       "натуральные ароматизаторы",
     ],
     weight: 500,
-    calories: 0.001,
+    calories: 0,
     size: "0.5 л",
   },
   {
@@ -211,8 +201,7 @@ const mockProducts: Product[] = [
     name: "Домашний лимонад",
     description: "Натуральный лимонад из свежих лимонов с мятой и имбирем",
     price: 149,
-    image_url:
-      "https://images.unsplash.com/photo-1560023907-5f339617ea30?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/lemonade.svg",
     category_id: "2",
     ingredients: [
       "свежие лимоны",
@@ -230,12 +219,11 @@ const mockProducts: Product[] = [
     name: "Минеральная вода",
     description: "Природная минеральная вода без газа",
     price: 49,
-    image_url:
-      "https://gorodvod.ru/upload/iblock/bfc/bfcf756f5cb12602fd8b8f812b113c8a.jpg",
+    image_url: "/images/products/mineralWater.svg",
     category_id: "2",
     ingredients: ["природная минеральная вода"],
     weight: 500,
-    calories: 0.001,
+    calories: 0,
     size: "0.5 л",
   },
   // десерты
@@ -245,8 +233,7 @@ const mockProducts: Product[] = [
     description:
       "Классический итальянский десерт с маскарпоне, савоярди и эспрессо",
     price: 299,
-    image_url:
-      "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/tiramisu.svg",
     category_id: "3",
     ingredients: [
       "маскарпоне",
@@ -266,8 +253,7 @@ const mockProducts: Product[] = [
     description:
       "Классический сливочный чизкейк с ванильным оттенком и ягодным соусом",
     price: 349,
-    image_url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Xi9QxCSIz-2kCv59Hd1NbBVSP0NhEvDnmQ&s",
+    image_url: "/images/products/cheesecake.svg",
     category_id: "3",
     ingredients: [
       "сливочный сыр",
@@ -285,8 +271,7 @@ const mockProducts: Product[] = [
     name: "Шоколадный брауни",
     description: "Плотный шоколадный десерт с грецкими орехами и вишней",
     price: 249,
-    image_url:
-      "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/brownie.svg",
     category_id: "3",
     ingredients: [
       "темный шоколад",
@@ -304,8 +289,7 @@ const mockProducts: Product[] = [
     name: "Панна Котта",
     description: "Нежный итальянский десерт из сливок с ванилью и клубникой",
     price: 279,
-    image_url:
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/pannaCotta.svg",
     category_id: "3",
     ingredients: ["сливки", "ваниль", "желатин", "клубника", "сахар"],
     weight: 160,
@@ -318,8 +302,7 @@ const mockProducts: Product[] = [
     description:
       "Три шарика премиального мороженого на выбор: ваниль, шоколад, клубника",
     price: 149,
-    image_url:
-      "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=800&h=800&fit=crop&q=80",
+    image_url: "/images/products/iceCream.svg",
     category_id: "3",
     ingredients: ["молоко", "сливки", "сахар", "ваниль", "какао", "клубника"],
     weight: 180,
