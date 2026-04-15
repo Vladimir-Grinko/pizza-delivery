@@ -1,61 +1,68 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Clock, Truck, Star, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Clock,
+  Truck,
+  Star,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const slides = [
   {
     id: 1,
-    image: '/images/hero/promo1.svg',
-    title: 'Свежая пицца',
-    subtitle: 'Горячая, вкусная, с любовью',
-    badge: '🔥 Хит продаж',
-    features: ['Свежие ингредиенты', 'Дровяная печь', '30 минут']
+    image: "/images/hero/promo1.svg",
+    title: "Свежая пицца",
+    subtitle: "Горячая, вкусная, с любовью",
+    badge: "🔥 Хит продаж",
+    features: ["Свежие ингредиенты", "Дровяная печь", "30 минут"],
   },
   {
     id: 2,
-    image: '/images/hero/promo2.svg',
-    title: 'Бесплатная доставка',
-    subtitle: 'При заказе от 1000₽',
-    badge: '🚚 Бесплатно',
-    features: ['Быстро', 'Бесплатно от 1000₽', 'До двери']
+    image: "/images/hero/promo2.svg",
+    title: "Бесплатная доставка",
+    subtitle: "При заказе от 1000₽",
+    badge: "🚚 Бесплатно",
+    features: ["Быстро", "Бесплатно от 1000₽", "До двери"],
   },
   {
     id: 3,
-    image: '/images/hero/promo3.svg',
-    title: 'Скидка 20%',
-    subtitle: 'На первый заказ',
-    badge: '💰 Выгода',
-    features: ['Промокод: FIRST20', 'На первый заказ', 'Не суммируется']
-  }
-]
+    image: "/images/hero/promo3.svg",
+    title: "Скидка 20%",
+    subtitle: "На первый заказ",
+    badge: "💰 Выгода",
+    features: ["Промокод: FIRST20", "На первый заказ", "Не суммируется"],
+  },
+];
 
 export function HeroSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   const scrollToProducts = () => {
-    const firstCategory = document.querySelector('[id]')
+    const firstCategory = document.querySelector("[id]");
     if (firstCategory) {
-      firstCategory.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      firstCategory.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   return (
     <section className="relative h-[400px] md:h-[600px] overflow-hidden">
@@ -93,7 +100,9 @@ export function HeroSlider() {
                 className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6"
               >
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-sm font-medium">{slides[currentSlide].badge}</span>
+                <span className="text-sm font-medium">
+                  {slides[currentSlide].badge}
+                </span>
               </motion.div>
 
               <motion.h1
@@ -121,10 +130,17 @@ export function HeroSlider() {
                 className="flex flex-wrap gap-4 mb-8"
               >
                 {slides[currentSlide].features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg">
-                    {index === 0 && <Clock className="w-4 h-4 text-green-400" />}
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg"
+                  >
+                    {index === 0 && (
+                      <Clock className="w-4 h-4 text-green-400" />
+                    )}
                     {index === 1 && <Truck className="w-4 h-4 text-blue-400" />}
-                    {index === 2 && <Star className="w-4 h-4 text-yellow-400" />}
+                    {index === 2 && (
+                      <Star className="w-4 h-4 text-yellow-400" />
+                    )}
                     <span className="text-sm font-medium">{feature}</span>
                   </div>
                 ))}
@@ -175,12 +191,12 @@ export function HeroSlider() {
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === currentSlide
-                ? 'bg-primary w-8'
-                : 'bg-white/50 hover:bg-white/70'
+                ? "bg-primary w-8"
+                : "bg-white/50 hover:bg-white/70"
             }`}
           />
         ))}
       </div>
     </section>
-  )
+  );
 }
